@@ -1,4 +1,4 @@
-module discord
+module github.com/johynpapin/discord
 
 go 1.15
 
