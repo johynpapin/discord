@@ -14,7 +14,7 @@ import (
 )
 
 const (
-	TOKEN = "MjcyMTIyMDQxOTA4NDYxNTY4.WIKHZg.s6lb1vUNquLaUCn77qfnCCEZO9o"
+	TOKEN = "yourDiscordToken"
 )
 
 func main() {
