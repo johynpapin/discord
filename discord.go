@@ -67,9 +67,8 @@ func (discord *Discord) GetNewChallenge() (string, error) {
 }
 
 func (discord *Discord) SendGuess(guess string) error {
-	requestMessage, err := discord.session.ChannelMessageSend(CHANNEL_ID, guess)
-	if err != nil {
-		return "", fmt.Errorf("sending the guess: %w", err)
+	if _, err := discord.session.ChannelMessageSend(CHANNEL_ID, guess); err != nil {
+		return fmt.Errorf("sending the guess: %w", err)
 	}
 
 	return nil
