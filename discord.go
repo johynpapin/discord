@@ -66,6 +66,15 @@ func (discord *Discord) GetNewChallenge() (string, error) {
 	return challenge, nil
 }
 
+func (discord *Discord) SendGuess(guess string) error {
+	requestMessage, err := discord.session.ChannelMessageSend(CHANNEL_ID, guess)
+	if err != nil {
+		return "", fmt.Errorf("sending the guess: %w", err)
+	}
+
+	return nil
+}
+
 func (discord *Discord) handleMessageCreate(session *discordgo.Session, message *discordgo.MessageCreate) {
 	author := message.Message.Author
 	content := message.Message.Content
